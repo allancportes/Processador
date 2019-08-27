@@ -1,0 +1,369 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "05/20/2018 22:29:03"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          Processador
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Processador_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg MUXULASelect;
+reg MuxBankSelect;
+reg RegWrite;
+reg [4:0] ULAcode;
+reg [31:0] WriteData;
+reg WriteFlag;
+reg [4:0] WriteRegister;
+reg [9:0] adressIn;
+reg clockReal;
+// wires                                               
+wire [31:0] Data1;
+wire [31:0] Data2;
+wire [31:0] DataMemOutput;
+wire [31:0] Instruction;
+wire [31:0] MUXULAOutput;
+wire [4:0] MuxBankOut;
+wire [4:0] RegOut1;
+wire [4:0] RegOut2;
+wire [31:0] ULAout;
+wire [9:0] addressOut;
+wire zero;
+
+// assign statements (if any)                          
+Processador i1 (
+// port map - connection between master ports and signals/registers   
+	.Data1(Data1),
+	.Data2(Data2),
+	.DataMemOutput(DataMemOutput),
+	.Instruction(Instruction),
+	.MUXULAOutput(MUXULAOutput),
+	.MUXULASelect(MUXULASelect),
+	.MuxBankOut(MuxBankOut),
+	.MuxBankSelect(MuxBankSelect),
+	.RegOut1(RegOut1),
+	.RegOut2(RegOut2),
+	.RegWrite(RegWrite),
+	.ULAcode(ULAcode),
+	.ULAout(ULAout),
+	.WriteData(WriteData),
+	.WriteFlag(WriteFlag),
+	.WriteRegister(WriteRegister),
+	.addressOut(addressOut),
+	.adressIn(adressIn),
+	.clockReal(clockReal),
+	.zero(zero)
+);
+initial 
+begin 
+#1000000 $stop;
+end 
+
+// clockReal
+always
+begin
+	clockReal = 1'b0;
+	clockReal = #50000 1'b1;
+	#50000;
+end 
+// adressIn[ 9 ]
+initial
+begin
+	adressIn[9] = 1'b0;
+end 
+// adressIn[ 8 ]
+initial
+begin
+	adressIn[8] = 1'b0;
+end 
+// adressIn[ 7 ]
+initial
+begin
+	adressIn[7] = 1'b0;
+end 
+// adressIn[ 6 ]
+initial
+begin
+	adressIn[6] = 1'b0;
+end 
+// adressIn[ 5 ]
+initial
+begin
+	adressIn[5] = 1'b0;
+end 
+// adressIn[ 4 ]
+initial
+begin
+	adressIn[4] = 1'b0;
+end 
+// adressIn[ 3 ]
+initial
+begin
+	adressIn[3] = 1'b0;
+end 
+// adressIn[ 2 ]
+initial
+begin
+	adressIn[2] = 1'b0;
+end 
+// adressIn[ 1 ]
+initial
+begin
+	adressIn[1] = 1'b0;
+end 
+// adressIn[ 0 ]
+initial
+begin
+	adressIn[0] = 1'b0;
+end 
+
+// MUXULASelect
+initial
+begin
+	MUXULASelect = 1'b0;
+end 
+
+// RegWrite
+initial
+begin
+	RegWrite = 1'b1;
+end 
+// WriteData[ 31 ]
+initial
+begin
+	WriteData[31] = 1'b0;
+end 
+// WriteData[ 30 ]
+initial
+begin
+	WriteData[30] = 1'b0;
+end 
+// WriteData[ 29 ]
+initial
+begin
+	WriteData[29] = 1'b0;
+end 
+// WriteData[ 28 ]
+initial
+begin
+	WriteData[28] = 1'b0;
+end 
+// WriteData[ 27 ]
+initial
+begin
+	WriteData[27] = 1'b0;
+end 
+// WriteData[ 26 ]
+initial
+begin
+	WriteData[26] = 1'b0;
+end 
+// WriteData[ 25 ]
+initial
+begin
+	WriteData[25] = 1'b0;
+end 
+// WriteData[ 24 ]
+initial
+begin
+	WriteData[24] = 1'b0;
+end 
+// WriteData[ 23 ]
+initial
+begin
+	WriteData[23] = 1'b0;
+end 
+// WriteData[ 22 ]
+initial
+begin
+	WriteData[22] = 1'b0;
+end 
+// WriteData[ 21 ]
+initial
+begin
+	WriteData[21] = 1'b0;
+end 
+// WriteData[ 20 ]
+initial
+begin
+	WriteData[20] = 1'b0;
+end 
+// WriteData[ 19 ]
+initial
+begin
+	WriteData[19] = 1'b0;
+end 
+// WriteData[ 18 ]
+initial
+begin
+	WriteData[18] = 1'b0;
+end 
+// WriteData[ 17 ]
+initial
+begin
+	WriteData[17] = 1'b0;
+end 
+// WriteData[ 16 ]
+initial
+begin
+	WriteData[16] = 1'b0;
+end 
+// WriteData[ 15 ]
+initial
+begin
+	WriteData[15] = 1'b0;
+end 
+// WriteData[ 14 ]
+initial
+begin
+	WriteData[14] = 1'b0;
+end 
+// WriteData[ 13 ]
+initial
+begin
+	WriteData[13] = 1'b0;
+end 
+// WriteData[ 12 ]
+initial
+begin
+	WriteData[12] = 1'b0;
+end 
+// WriteData[ 11 ]
+initial
+begin
+	WriteData[11] = 1'b0;
+end 
+// WriteData[ 10 ]
+initial
+begin
+	WriteData[10] = 1'b0;
+end 
+// WriteData[ 9 ]
+initial
+begin
+	WriteData[9] = 1'b0;
+end 
+// WriteData[ 8 ]
+initial
+begin
+	WriteData[8] = 1'b0;
+end 
+// WriteData[ 7 ]
+initial
+begin
+	WriteData[7] = 1'b0;
+end 
+// WriteData[ 6 ]
+initial
+begin
+	WriteData[6] = 1'b0;
+end 
+// WriteData[ 5 ]
+initial
+begin
+	WriteData[5] = 1'b0;
+end 
+// WriteData[ 4 ]
+initial
+begin
+	WriteData[4] = 1'b0;
+end 
+// WriteData[ 3 ]
+initial
+begin
+	WriteData[3] = 1'b0;
+end 
+// WriteData[ 2 ]
+initial
+begin
+	WriteData[2] = 1'b0;
+end 
+// WriteData[ 1 ]
+initial
+begin
+	WriteData[1] = 1'b0;
+end 
+// WriteData[ 0 ]
+initial
+begin
+	WriteData[0] = 1'b0;
+end 
+
+// WriteFlag
+initial
+begin
+	WriteFlag = 1'b1;
+end 
+// WriteRegister[ 4 ]
+initial
+begin
+	WriteRegister[4] = 1'b0;
+end 
+// WriteRegister[ 3 ]
+initial
+begin
+	WriteRegister[3] = 1'b0;
+end 
+// WriteRegister[ 2 ]
+initial
+begin
+	WriteRegister[2] = 1'b0;
+end 
+// WriteRegister[ 1 ]
+initial
+begin
+	WriteRegister[1] = 1'b0;
+end 
+// WriteRegister[ 0 ]
+initial
+begin
+	WriteRegister[0] = 1'b0;
+end 
+// ULAcode[ 4 ]
+initial
+begin
+	ULAcode[4] = 1'b0;
+end 
+// ULAcode[ 3 ]
+initial
+begin
+	ULAcode[3] = 1'b0;
+end 
+// ULAcode[ 2 ]
+initial
+begin
+	ULAcode[2] = 1'b0;
+end 
+// ULAcode[ 1 ]
+initial
+begin
+	ULAcode[1] = 1'b0;
+end 
+// ULAcode[ 0 ]
+initial
+begin
+	ULAcode[0] = 1'b0;
+end 
+endmodule
+

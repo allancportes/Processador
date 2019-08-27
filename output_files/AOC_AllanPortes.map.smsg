@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Program_Counter.v(11): always construct contains both blocking and non-blocking assignments File: /home-local/aluno/Downloads/AOC_AllanPortes/Program_Counter.v Line: 11
+Info (10281): Verilog HDL Declaration information at Processador.v(66): object "inputcontrol" differs only in case from object "inputControl" in the same scope File: /home-local/aluno/Downloads/AOC_AllanPortes/Processador.v Line: 66

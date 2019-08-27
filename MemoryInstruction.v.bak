@@ -1,0 +1,15 @@
+module MemoryInstruction (Adress, InstructionOut, clock);
+
+	input [9:0] adress;
+	input clock;
+	output [31:0] InstructionOut;
+	reg [31:0] mem [55:0];
+	integer flag = 0;
+	
+	always @ (posedge clock)
+		begin
+			if (flag == 0)
+			begin
+
+endmodule 
+

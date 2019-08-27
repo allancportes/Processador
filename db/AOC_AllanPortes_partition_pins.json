@@ -1,0 +1,249 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "centena_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "centena_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "centena_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "centena_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "centena_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "centena_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "centena_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_pcOUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_pcOUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "insinal",
+					"strict" : false
+				},
+				{
+					"name" : "beq",
+					"strict" : false
+				},
+				{
+					"name" : "zero",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade_regOUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_regOUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_regOUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_regOUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_regOUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_regOUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena_regOUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "check1",
+					"strict" : false
+				},
+				{
+					"name" : "check",
+					"strict" : false
+				},
+				{
+					"name" : "switch[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switch[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switch[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switch[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switch[1]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

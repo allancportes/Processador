@@ -1,0 +1,482 @@
+module controlUnit(check,
+                   clock, 
+                   opcode, 
+                   muxRegBankSelect, 
+                   muxULASelect, 
+                   BigMuxSelect, 
+                   hlt, 
+                   jmp, 
+                   beq, 
+                   bneq, 
+                   rst, 
+                   muxDataMemSelect, 
+                   wf, 
+                   wm, 
+                   ALUcode, 
+                   InputControl);
+
+	input check, clock;
+	input [5:0] opcode;		
+	output reg muxRegBankSelect;			//pre-regbank mux selection
+	output reg muxULASelect;			//pre-alu mux selection
+	output reg [1:0] BigMuxSelect;		//big mux select
+	output reg hlt, jmp,rst, beq, bneq;	//pc flags	
+	output reg muxDataMemSelect;			//post-data mem mux selection
+	output reg wf;				//datamem write flag
+	output reg wm;				//reg bank write mark
+	output reg[4:0] ALUcode;		//alu opcode
+	output reg InputControl;			//controle de input
+	
+	always @ (opcode or check) begin
+		case(opcode[5:0])
+			6'b000000: begin //ADD - OK - 0
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b000001: begin //SUB - OK - 1
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0 ;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00001; 
+				InputControl = 1'b0;
+				end
+			6'b000010: begin //ADDI - OK - 2
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b1;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b000011: begin //SUBI - OK - 3
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b1;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00001; 
+				InputControl = 1'b0;
+				end
+			6'b000100: begin //INC - OK - 4
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00010; 
+				InputControl = 1'b0;
+				end
+			6'b000101: begin //DEC - OK - 5
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00011; 
+				InputControl = 1'b0;
+				end
+			6'b000110: begin //SLT - OK - 6
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00100; 
+				InputControl = 1'b0;
+				end
+			6'b000111: begin //SHFL - OK - 7
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00111; 
+				InputControl = 1'b0;
+				end
+			6'b001000: begin //SHFR - OK - 8
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b01000; 
+				InputControl = 1'b0;
+				end
+			6'b001001: begin //NOT - OK - 9
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b01001; 
+				InputControl = 1'b0;
+				end
+			6'b001010: begin //AND - OK - 10
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b01010; 
+				InputControl = 1'b0;
+				end
+			6'b001011: begin //OR - OK - 11
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b01011; 
+				InputControl = 1'b0;
+				end
+			6'b001100: begin //XOR - OK - 12
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b01100; 
+				InputControl = 1'b0;
+				end
+			6'b001101: begin //MULT- OK - 13
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00101; 
+				InputControl = 1'b0;
+				end
+			6'b001110: begin //DIV - OK - 14
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00110; 
+				InputControl = 1'b0;
+				end
+			6'b001111: begin //LD - OK - 15
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b1;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b010000: begin //LDI - OK - 16
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b1;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b010001: begin //STR - OK - 17 ;D
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b1;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b1;
+				wm = 1'b0;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b010010: begin //BEQ - OK - 18
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b01;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b1;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00001; 
+				InputControl = 1'b0;
+				end
+			6'b010011: begin //BNEQ - OK - 19
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b01;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b1;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00001; 
+				InputControl = 1'b0;
+				end
+			6'b010100: begin //JMP - OK - 20
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b10;
+				hlt = 1'b0;
+				jmp = 1'b1;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00010; 
+				InputControl = 1'b0;
+				end
+			6'b010101: begin //JMPR - OK - 21
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b11;
+				hlt = 1'b0;
+				jmp = 1'b1;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b010110: begin //NOP - OK - 22
+				muxRegBankSelect = 1'b1;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b1;
+				wf = 1'b0;
+				wm = 1'b1;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+				end
+			6'b010111: begin //HLT - OK - 23
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b1;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00000; 	
+				InputControl = 1'b0;
+				end
+			6'b011000: begin //IN - OK - 24
+					
+					if(check == 1) begin
+						muxRegBankSelect = 1'b0;
+						muxULASelect = 1'b1;
+						BigMuxSelect = 2'b00;
+	
+						hlt = 1'b0;
+						jmp = 1'b0;
+						beq = 1'b0;
+						bneq = 1'b0;
+						rst = 1'b0;
+						muxDataMemSelect = 1'b1;
+						wf = 1'b0;
+						wm = 1'b1;
+						ALUcode = 5'b00000; 
+						InputControl = 1'b1;
+					end
+					else if (clock == 1) begin
+						muxRegBankSelect = 1'b0;
+						muxULASelect = 1'b1;
+						BigMuxSelect = 2'b00;
+	
+						hlt = 1'b1;
+						jmp = 1'b0;
+						beq = 1'b0;
+						bneq = 1'b0;
+						rst = 1'b0;
+						muxDataMemSelect = 1'b1;
+						wf = 1'b0;
+						wm = 1'b1;
+						ALUcode = 5'b00000; 
+						InputControl = 1'b1;
+					end
+					
+				end
+			6'b011001: begin //OUT - OK - 25
+					
+					if(check == 1) begin
+						muxRegBankSelect = 1'b1;
+						muxULASelect = 1'b0;
+						BigMuxSelect = 2'b00;
+	
+						hlt = 1'b0;
+						jmp = 1'b0;
+						beq = 1'b0;
+						bneq = 1'b0;
+						rst = 1'b0;
+						muxDataMemSelect = 1'b1;
+						wf = 1'b0;
+						wm = 1'b0;
+						ALUcode = 5'b00000; 
+						InputControl = 1'b0;
+					end
+					else if (clock == 1) begin
+						muxRegBankSelect = 1'b1;
+						muxULASelect = 1'b0;
+						BigMuxSelect = 2'b00;
+	
+						hlt = 1'b1;
+						jmp = 1'b0;
+						beq = 1'b0;
+						bneq = 1'b0;
+						rst = 1'b0;
+						muxDataMemSelect = 1'b1;
+						wf = 1'b0;
+						wm = 1'b0;
+						ALUcode = 5'b00000; 
+						InputControl = 1'b0;
+					end
+					
+				end
+			default: begin
+				muxRegBankSelect = 1'b0;
+				muxULASelect = 1'b0;
+				BigMuxSelect = 2'b00;
+				hlt = 1'b0;
+				jmp = 1'b0;
+				beq = 1'b0;
+				bneq = 1'b0;
+				rst = 1'b0;
+				muxDataMemSelect = 1'b0;
+				wf = 1'b0;
+				wm = 1'b0;
+				ALUcode = 5'b00000; 
+				InputControl = 1'b0;
+			end	
+		endcase
+	end
+
+endmodule 

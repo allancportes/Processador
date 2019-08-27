@@ -1,0 +1,35 @@
+module BigMux(zero, );
+  
+  input zero, beq, bneq;
+  input [1:0]  BigMuxSelect; 
+  input [31:0]  PcOut, extSum, extSignal, dataARegBank;
+  output reg [31:0] bmOut;
+
+always @ (PcOut or extSum or extSignal or dataARegBank or zero or BigMuxSelect or beq or bneq) begin
+      
+		case(BigMuxSelect[1:0])
+			2'b01: //branch
+			begin	
+				if(bneq == 1 && zero == 1)
+					bmOut = PcOut;
+					
+				else if(bneq == 1 && zero == 0)
+					bmOut = extSum;
+					
+				else if(beq == 1 && zero == 1)
+					bmOut = extSum;
+					
+				else if(beq == 1 && zero == 0)
+					bmOut = PcOut;
+			end
+			
+			2'b10: bmOut = extSignal;//jump
+			
+			2'b11 : bmOut = dataARegBank;//jump register	
+			
+			default: bmOut = PcOut; //2'b00
+			
+        	endcase
+end
+
+endmodule

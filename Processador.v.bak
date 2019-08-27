@@ -1,0 +1,33 @@
+module BMCOREv2 (clkAuto, 
+                 check, 
+                 cent_out, 
+                 dez_out, 
+                 uni_out, 
+                 pin_button, 
+                 hlt, 
+                 negative, 
+                 reset);
+
+	input wire check, pin_button, clkAuto, reset;	//clock/sinal de checagem para o término de in/out
+	input wire [15:0] switches;			//chaves seletores para input
+	wire [31:0] vAddress;				    //valor contido no endereço de output
+	wire [4:0] Address;				      //endereço do output
+	wire [9:0] adrsIn;				      //endereço de entrada do Program Counter
+	wire [9:0] adrsOut;				      //endereço de saída do Program Counter, que entra na memória de instruções
+	wire [31:0] DataWrite;				  //dado de escrita no banco de registradores
+	wire [31:0] data1, data2;			  //saídas do banco de registradores
+	wire [31:0] ALUresult;				  //resultado da operação realizada na ALU, que é a entrada da memória de dados
+	wire [31:0] Instruction;			  //instrução de saída da memória de instruções
+	wire [31:0] Extend26_32;			  //saida do extensor de 26 para 32 bits
+	wire [31:0] Extend16_32;			  //saída do extensor de 16 para 32 bits	
+	wire [31:0] PAMoutput;				  //sinal de saída do multiplexador anterior a alu, que entra como o seu segundo operando, DataB
+	wire [31:0] DataMemOutput;			//sinal de sabin_BCD bin_to_bcdída da memória de dados
+	wire [15:0] InMuxOut;				    //sinal de saída do mux seletor de input/imediato
+	wire [4:0] ALUcode, PRBMout;		//código de seleção de operação da ALU/ sinal de saída do mux antes do RegBank
+	wire [1:0] bmSelect;				    //seletor de saídas do BigMux
+	wire zero, clkReal;											
+	wire PRBMs, PAMselect, jmp, rst, pdmms, wf, wm, beq, bneq, IMcontrol;
+	wire [3:0] cent, dez, uni, cent_pc, dez_pc, uni_pc,cent_reg_address,dez_reg_address,uni_reg_address;
+	wire [3:0] cent_a, dez_a, uni_a;
+	output wire hlt, negative;
+	output wire [6:0] cent_out, dez_out, uni_out, dez_out_pc, uni_out_pc, dez_out_reg_address,uni_out_reg_address;

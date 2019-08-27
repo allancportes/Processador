@@ -1,0 +1,19 @@
+module InMux(IMcontrol, 
+             offset, 
+             Input, 
+             IMoutput);
+
+	input IMcontrol;
+	input [15:0] offset, Input;
+	output reg[15:0] IMoutput;
+	
+	always @ (*) begin
+		
+		case (IMcontrol)
+			1'b0 : IMoutput = offset;
+			1'b1 : IMoutput = Input;
+		endcase
+		
+	end
+	
+endmodule

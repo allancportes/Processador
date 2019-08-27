@@ -1,0 +1,255 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "07/05/2018 17:01:04"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          Processador
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Processador_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg check;
+reg clockReal;
+reg [15:0] switch;
+// wires                                               
+wire [31:0] Data1;
+wire [31:0] Data2;
+wire MUXINSelect;
+wire [4:0] MuxBankOut;
+wire [4:0] RegOut1;
+wire RegOut1[0]__duplicate;
+wire RegOut1[1]__duplicate;
+wire RegOut1[2]__duplicate;
+wire RegOut1[3]__duplicate;
+wire RegOut1[4]__duplicate;
+wire [4:0] RegOut2;
+wire RegOut2[0]__duplicate;
+wire RegOut2[1]__duplicate;
+wire RegOut2[2]__duplicate;
+wire RegOut2[3]__duplicate;
+wire RegOut2[4]__duplicate;
+wire RegWrite;
+wire [31:0] ULAout;
+wire [31:0] WriteData;
+wire WriteData[0]__duplicate;
+wire WriteData[1]__duplicate;
+wire WriteData[2]__duplicate;
+wire WriteData[3]__duplicate;
+wire WriteData[4]__duplicate;
+wire WriteData[5]__duplicate;
+wire WriteData[6]__duplicate;
+wire WriteData[7]__duplicate;
+wire WriteData[8]__duplicate;
+wire WriteData[9]__duplicate;
+wire WriteData[10]__duplicate;
+wire WriteData[11]__duplicate;
+wire WriteData[12]__duplicate;
+wire WriteData[13]__duplicate;
+wire WriteData[14]__duplicate;
+wire WriteData[15]__duplicate;
+wire WriteData[16]__duplicate;
+wire WriteData[17]__duplicate;
+wire WriteData[18]__duplicate;
+wire WriteData[19]__duplicate;
+wire WriteData[20]__duplicate;
+wire WriteData[21]__duplicate;
+wire WriteData[22]__duplicate;
+wire WriteData[23]__duplicate;
+wire WriteData[24]__duplicate;
+wire WriteData[25]__duplicate;
+wire WriteData[26]__duplicate;
+wire WriteData[27]__duplicate;
+wire WriteData[28]__duplicate;
+wire WriteData[29]__duplicate;
+wire WriteData[30]__duplicate;
+wire WriteData[31]__duplicate;
+wire [9:0] addressOut;
+wire beq;
+wire [6:0] centena_out;
+wire [6:0] dezena_out;
+wire [31:0] resultado;
+wire [6:0] unidade_out;
+
+// assign statements (if any)                          
+Processador i1 (
+// port map - connection between master ports and signals/registers   
+	.Data1(Data1),
+	.Data2(Data2),
+	.MUXINSelect(MUXINSelect),
+	.MuxBankOut(MuxBankOut),
+	.RegOut1(RegOut1),
+	.\RegOut1[0]__duplicate (RegOut1[0]__duplicate),
+	.\RegOut1[1]__duplicate (RegOut1[1]__duplicate),
+	.\RegOut1[2]__duplicate (RegOut1[2]__duplicate),
+	.\RegOut1[3]__duplicate (RegOut1[3]__duplicate),
+	.\RegOut1[4]__duplicate (RegOut1[4]__duplicate),
+	.RegOut2(RegOut2),
+	.\RegOut2[0]__duplicate (RegOut2[0]__duplicate),
+	.\RegOut2[1]__duplicate (RegOut2[1]__duplicate),
+	.\RegOut2[2]__duplicate (RegOut2[2]__duplicate),
+	.\RegOut2[3]__duplicate (RegOut2[3]__duplicate),
+	.\RegOut2[4]__duplicate (RegOut2[4]__duplicate),
+	.RegWrite(RegWrite),
+	.ULAout(ULAout),
+	.WriteData(WriteData),
+	.\WriteData[0]__duplicate (WriteData[0]__duplicate),
+	.\WriteData[1]__duplicate (WriteData[1]__duplicate),
+	.\WriteData[2]__duplicate (WriteData[2]__duplicate),
+	.\WriteData[3]__duplicate (WriteData[3]__duplicate),
+	.\WriteData[4]__duplicate (WriteData[4]__duplicate),
+	.\WriteData[5]__duplicate (WriteData[5]__duplicate),
+	.\WriteData[6]__duplicate (WriteData[6]__duplicate),
+	.\WriteData[7]__duplicate (WriteData[7]__duplicate),
+	.\WriteData[8]__duplicate (WriteData[8]__duplicate),
+	.\WriteData[9]__duplicate (WriteData[9]__duplicate),
+	.\WriteData[10]__duplicate (WriteData[10]__duplicate),
+	.\WriteData[11]__duplicate (WriteData[11]__duplicate),
+	.\WriteData[12]__duplicate (WriteData[12]__duplicate),
+	.\WriteData[13]__duplicate (WriteData[13]__duplicate),
+	.\WriteData[14]__duplicate (WriteData[14]__duplicate),
+	.\WriteData[15]__duplicate (WriteData[15]__duplicate),
+	.\WriteData[16]__duplicate (WriteData[16]__duplicate),
+	.\WriteData[17]__duplicate (WriteData[17]__duplicate),
+	.\WriteData[18]__duplicate (WriteData[18]__duplicate),
+	.\WriteData[19]__duplicate (WriteData[19]__duplicate),
+	.\WriteData[20]__duplicate (WriteData[20]__duplicate),
+	.\WriteData[21]__duplicate (WriteData[21]__duplicate),
+	.\WriteData[22]__duplicate (WriteData[22]__duplicate),
+	.\WriteData[23]__duplicate (WriteData[23]__duplicate),
+	.\WriteData[24]__duplicate (WriteData[24]__duplicate),
+	.\WriteData[25]__duplicate (WriteData[25]__duplicate),
+	.\WriteData[26]__duplicate (WriteData[26]__duplicate),
+	.\WriteData[27]__duplicate (WriteData[27]__duplicate),
+	.\WriteData[28]__duplicate (WriteData[28]__duplicate),
+	.\WriteData[29]__duplicate (WriteData[29]__duplicate),
+	.\WriteData[30]__duplicate (WriteData[30]__duplicate),
+	.\WriteData[31]__duplicate (WriteData[31]__duplicate),
+	.addressOut(addressOut),
+	.beq(beq),
+	.centena_out(centena_out),
+	.check(check),
+	.clockReal(clockReal),
+	.dezena_out(dezena_out),
+	.resultado(resultado),
+	.switch(switch),
+	.unidade_out(unidade_out)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clockReal
+initial
+begin
+	clockReal = 1'b0;
+end 
+
+// check
+initial
+begin
+	check = 1'b0;
+end 
+// switch[ 15 ]
+initial
+begin
+	switch[15] = 1'b0;
+end 
+// switch[ 14 ]
+initial
+begin
+	switch[14] = 1'b0;
+end 
+// switch[ 13 ]
+initial
+begin
+	switch[13] = 1'b0;
+end 
+// switch[ 12 ]
+initial
+begin
+	switch[12] = 1'b0;
+end 
+// switch[ 11 ]
+initial
+begin
+	switch[11] = 1'b0;
+end 
+// switch[ 10 ]
+initial
+begin
+	switch[10] = 1'b0;
+end 
+// switch[ 9 ]
+initial
+begin
+	switch[9] = 1'b0;
+end 
+// switch[ 8 ]
+initial
+begin
+	switch[8] = 1'b0;
+end 
+// switch[ 7 ]
+initial
+begin
+	switch[7] = 1'b0;
+end 
+// switch[ 6 ]
+initial
+begin
+	switch[6] = 1'b0;
+end 
+// switch[ 5 ]
+initial
+begin
+	switch[5] = 1'b0;
+end 
+// switch[ 4 ]
+initial
+begin
+	switch[4] = 1'b0;
+end 
+// switch[ 3 ]
+initial
+begin
+	switch[3] = 1'b0;
+end 
+// switch[ 2 ]
+initial
+begin
+	switch[2] = 1'b0;
+end 
+// switch[ 1 ]
+initial
+begin
+	switch[1] = 1'b0;
+end 
+// switch[ 0 ]
+initial
+begin
+	switch[0] = 1'b0;
+end 
+endmodule
+

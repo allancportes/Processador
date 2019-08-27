@@ -1,0 +1,166 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/03/2018 16:14:50"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          Program_Counter
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Program_Counter_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg PCBranch;
+reg [9:0] adress;
+reg clock;
+reg hlt;
+reg jr;
+reg jump;
+reg reset;
+reg zero;
+// wires                                               
+wire [9:0] pgcount;
+
+// assign statements (if any)                          
+Program_Counter i1 (
+// port map - connection between master ports and signals/registers   
+	.PCBranch(PCBranch),
+	.adress(adress),
+	.clock(clock),
+	.hlt(hlt),
+	.jr(jr),
+	.jump(jump),
+	.pgcount(pgcount),
+	.reset(reset),
+	.zero(zero)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+// adress[ 9 ]
+initial
+begin
+	adress[9] = 1'b0;
+end 
+// adress[ 8 ]
+initial
+begin
+	adress[8] = 1'b0;
+end 
+// adress[ 7 ]
+initial
+begin
+	adress[7] = 1'b0;
+end 
+// adress[ 6 ]
+initial
+begin
+	adress[6] = 1'b0;
+end 
+// adress[ 5 ]
+initial
+begin
+	adress[5] = 1'b0;
+end 
+// adress[ 4 ]
+initial
+begin
+	adress[4] = 1'b0;
+end 
+// adress[ 3 ]
+initial
+begin
+	adress[3] = 1'b0;
+	adress[3] = #800000 1'b1;
+end 
+// adress[ 2 ]
+initial
+begin
+	adress[2] = 1'b0;
+	adress[2] = #400000 1'b1;
+	adress[2] = #400000 1'b0;
+end 
+// adress[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		adress[1] = 1'b0;
+		adress[1] = #200000 1'b1;
+		# 200000;
+	end
+	adress[1] = 1'b0;
+end 
+// adress[ 0 ]
+always
+begin
+	adress[0] = 1'b0;
+	adress[0] = #100000 1'b1;
+	#100000;
+end 
+
+// clock
+always
+begin
+	clock = 1'b0;
+	clock = #50000 1'b1;
+	#50000;
+end 
+
+// PCBranch
+initial
+begin
+	PCBranch = 1'b0;
+end 
+
+// hlt
+initial
+begin
+	hlt = 1'b0;
+end 
+
+// jr
+initial
+begin
+	jr = 1'b0;
+end 
+
+// jump
+initial
+begin
+	jump = 1'b0;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+end 
+
+// zero
+initial
+begin
+	zero = 1'b0;
+end 
+endmodule
+

@@ -1,0 +1,20 @@
+module RegBank (clock, Reg1, Reg2, RegWrite, WriteData, WriteRegistes, Data1, Data2);
+
+	input [4:0] Reg1, Reg2, WriteRegister;
+	input [31:0] WriteData;
+	input RegWrite, clock;
+	outpur [31:0] Data1, Data2;
+	reg [31:0] Register [31:0]; //É um vetor de 32 registradores com 32 bits cada
+
+	always @(posedge clock)
+		begin
+			Register[0] = 32'b0;
+			if(RegWrite) // Se o sinal de escrita for 1
+				Register [WriteRegister] = WriteData; 
+		end
+		
+		assign Data1 = Register[Reg1];
+		assign Data2 = Register[Reg2];
+
+
+endmodule
